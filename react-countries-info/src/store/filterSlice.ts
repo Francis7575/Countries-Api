@@ -35,11 +35,9 @@ const filterSlice = createSlice({
         },
         searchAction: (state, action) => {
             if (action.payload !== '') {
-                return data.filter(item => {
-                    return item["name"].toLowerCase().includes(action.payload)
-                })
+                return state.filter(item => item.name.toLowerCase().includes(action.payload.toLowerCase()));
             } else {
-                return []
+                return [];
             }
         }
     }
