@@ -5,7 +5,7 @@ import SecondaryPage from './pages/SecondaryPage'
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<PrimaryPage />}/>
+      <Route path="/countries-info" element={<PrimaryPage />}/>
       <Route path="/country/:CountryName" element={<SecondaryPage />}/>
     </Routes>
   )
