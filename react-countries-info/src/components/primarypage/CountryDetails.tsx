@@ -3,7 +3,7 @@ import { RootState } from '../../store/store'
 import { Link } from 'react-router-dom'
 import useTheme from '../../hooks/useTheme'
 import LazyLoad from 'react-lazyload'
-import SpinnerIcon from '/icon-spinner.gif'
+import LoadingIcon from '/icon-loading.gif'
 
 const CountryDetails = () => {
   useTheme();
@@ -12,7 +12,7 @@ const CountryDetails = () => {
 
   const loadingPlaceholder = (
     <div className="flex items-center justify-center w-full h-full">
-      <img src={SpinnerIcon} alt="Loading..." />
+      <img src={LoadingIcon} alt="Loading..." />
     </div>
   );
 
