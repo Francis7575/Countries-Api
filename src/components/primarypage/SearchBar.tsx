@@ -4,7 +4,10 @@ import { LightSearchIcon, DarkSearchIcon } from '../../svgs';
 import { RootState } from '../../store/store';
 import { filterAction } from '../../store/filterSlice';
 
-const SearchBar = () => {
+type SearchBarProps = {
+    setIsSearching: (value: boolean) => void
+}
+const SearchBar = ({setIsSearching}: SearchBarProps) => {
     const theme = useSelector((store: RootState) => store.theme)
     const dispatch = useDispatch();
     const [input, setInput] = useState<string>('');
@@ -12,6 +15,7 @@ const SearchBar = () => {
     const handleSearchInput = (e: ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value
         setInput(value);
+        setIsSearching(true)
     }
 
     useEffect(() => {
