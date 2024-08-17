@@ -4,7 +4,11 @@ import { filterAction } from '../../store/filterSlice';
 import { RootState } from '../../store/store';
 import { LightDropdown, DarkDropdown, LightCrossIcon, DarkCrossIcon } from '../../svgs';
 
-const Filter = () => {
+type FilterProps = {
+  setIsSearching: (value: boolean) => void
+}
+
+const Filter = ({setIsSearching}: FilterProps) => {
   const theme = useSelector((state: RootState) => state.theme);
   const dispatch = useDispatch();
   const dropDownRef = useRef<HTMLDivElement>(null);
@@ -56,6 +60,7 @@ const Filter = () => {
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
+    setIsSearching(true)
   };
 
   const handleFilterSelect = (filter: string) => {
