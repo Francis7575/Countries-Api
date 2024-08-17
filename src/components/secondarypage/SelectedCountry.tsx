@@ -29,7 +29,7 @@ const SelectedCountry = () => {
     <section className="pb-4 xl:pb-14">
       <div className="mt-[2.5rem] ml-[1.75rem] lg:ml-[50px] xl:ml-[80px] relative max-w-[6.5rem]">
         <Link
-          to="/countries-info"
+          to="/"
           className={`${theme === 'light' ? 'bg-white text-black hover:bg-light-hover' : 'bg-dark-gray text-white hover:bg-dark-hover'} scale-transition flex items-center gap-[8px] text-[.875rem] font-light w-full shadow-backBtn py-[.375rem] px-[1.5rem] rounded-[2px]`}>
           <span>{theme === 'light' ? LightBackButton : DarkBackButton}</span>
           <span>Back</span>
