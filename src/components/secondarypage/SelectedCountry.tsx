@@ -5,7 +5,6 @@ import useTheme from '../../hooks/useTheme';
 import { LightBackButton, DarkBackButton } from "../../svgs";
 import { Currency, Languages } from '../../types/types'
 
-
 const SelectedCountry = () => {
   useTheme();
   const theme = useSelector((state: RootState) => state.theme);
@@ -17,7 +16,7 @@ const SelectedCountry = () => {
     return <p>Country name is not provided in the URL</p>;
   }
 
-  const selectedCountry = filter.find(
+  const selectedCountry = filter.data.find(
     (country) => country.name.toLowerCase() === CountryName.toLowerCase() // By converting both strings to lowercase, you ensure that "France" and "france" are treated as equal.
   );
 
@@ -26,8 +25,8 @@ const SelectedCountry = () => {
   }
 
   return (
-    <section className="pb-4 xl:pb-14">
-      <div className="mt-[2.5rem] ml-[1.75rem] lg:ml-[50px] xl:ml-[80px] relative max-w-[6.5rem]">
+    <section className="pb-4 xl:pb-14 max-w-[1200px] mx-auto">
+      <div className="mt-[2.5rem] ml-[3.438rem] lg:ml-[50px] xl:ml-0 relative max-w-[6.5rem]">
         <Link
           to="/"
           className={`${theme === 'light' ? 'bg-white text-black hover:bg-light-hover' : 'bg-dark-gray text-white hover:bg-dark-hover'} scale-transition flex items-center gap-[8px] text-[.875rem] font-light w-full shadow-backBtn py-[.375rem] px-[1.5rem] rounded-[2px]`}>
@@ -35,7 +34,7 @@ const SelectedCountry = () => {
           <span>Back</span>
         </Link>
       </div>
-      <div className={`mdup:flex mdup:items-center mdup:gap-14 lg:gap-20 mt-[64px] px-[50px] xl:px-[80px] ${theme === 'light' ? 'text-black' : 'text-white'}`}>
+      <div className={`mdup:flex mdup:items-center mdup:gap-14 lg:gap-20 mt-[64px] px-[3.438rem] xl:px-0 ${theme === 'light' ? 'text-black' : 'text-white'}`}>
         <img src={selectedCountry.flags.png} alt={`${selectedCountry.name} flag`} className="mdup:w-[45%] w-full rounded-[5px]" />
         <div>
           <h2 className="mt-12 lg:mt-0 font-extrabold text-[1.375rem] md:text-[2rem]">{selectedCountry.name}</h2>

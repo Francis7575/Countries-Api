@@ -76,7 +76,7 @@ const Filter = ({setIsSearching}: FilterProps) => {
   };
 
   return (
-    <div ref={dropDownRef} className='ml-4 max-w-[200px] w-full relative'>
+    <div ref={dropDownRef} className='max-w-[200px] w-full relative z-50'>
       <div onClick={toggleDropdown}
         className={`mt-[2.5rem] sm:mt-0 cursor-pointer flex justify-between rounded-[5px] items-center text-left relative text-[.75rem] md:text-[.875rem] shadow-searchBar w-full py-[.875rem] pl-[1.5rem] pr-[1.25rem] ${theme === 'light' ? 'bg-white' : 'bg-dark-gray text-white'}`}>
         {selectedFilter}

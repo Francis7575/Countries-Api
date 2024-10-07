@@ -29,7 +29,7 @@ img {
 }
 
 .grid-cols-dynamic {
-    grid-template-columns: repeat(auto-fill, minmax(264px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .grid-container {
@@ -58,8 +58,8 @@ img {
     transform: scale(1.1);
 }
 
-@media (min-width: 90em) {
+@media (min-width: 80em) {
     .grid-cols-dynamic {
-        grid-template-columns: repeat(4, minmax(264px, 1fr));
+        grid-template-columns: repeat(4, minmax(240px, 1fr));
     }
 }
